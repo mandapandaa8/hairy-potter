@@ -7,17 +7,22 @@
     //& function must add a new property of .fired
         //& with the value of true to the object
     //& function must add new property of .cracked
-        //& i. if temp of kil is >(greater) 2200 degrees cracked = true
-        //& ii. if temp of kiln is <=(less and equal) 2200 cracked = false
+        //& i. if temp of kiln is >(greater) 2200 degrees cracked = true
+        //& ii. if temp of kiln is <(less and equal) 2200 cracked = false
     //& after broth new properties are added, return the augmented object
 
 import { makePottery } from "./PotteryWheel.js"
 
  export let firePottery = (potteryObject, temp) => {
-            potteryObject.fired = true
+    //* each potteryObject will be fired so true
+    potteryObject.fired = true
+    //* each pottery object that is fired at a temp above 2200
+        //* returns as cracked
                 if (temp > 2200) {
                     potteryObject.cracked = true
                 }
+    //* each pottery object that is fired with a kiln temp below
+        //* 2200 is fired properly and not cracked so false
                 else {
                     potteryObject.cracked = false
                 }
